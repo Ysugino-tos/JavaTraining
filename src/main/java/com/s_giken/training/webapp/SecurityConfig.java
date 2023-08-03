@@ -32,6 +32,8 @@ public class SecurityConfig {
     public SecurityFilterChain webSecurityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable()) // CSRF対策を無効化
+                .headers((header) -> header.frameOptions().disable())
+                .securityMatcher("/h2-console/**")
                 .formLogin((form) -> form
                         .defaultSuccessUrl("/")
                         .loginProcessingUrl("/login")
