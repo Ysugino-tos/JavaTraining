@@ -14,16 +14,23 @@
     </div>
 
     <!--/* 氏名 */-->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label" for="name">氏名</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="text" th:field="*{name}" />
+      </div>
+    </div>
     <!--/* ここにテキストフォームを設置 */-->
 
     <div class="mb-3 row">
       <label class="col-sm-2 col-form-label"></label>
       <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary">決定</button>
+        <button type="submit" class="btn btn-primary">検索</button>
         <a class="btn btn-secondary" th:href="@{/member/add}">追加</a>
       </div>
     </div>
   </form>
   <div class="md-12"></div>
 </div>
+
 </html>
