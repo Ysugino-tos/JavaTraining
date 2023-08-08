@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/app :: layout('料金検索結果', ~{::content}, 'charge')}">
+<div th:fragment="content">
+    <!--/*
+        加入者情報検索結果表示画面
+    */-->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td scope="col">料金番号</td>
+                <td scope="col">料金名</td>
+                <td scope="col">料金</td>
+                <td scope="col">適用開始日</td>
+                <td scope="col">適用終了日</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${!#lists.isEmpty(result)}" th:each="row : ${result}">
+                <td>
+                    <a th:href="@{/charge/edit/{id}(id=${row.chargeId})}" th:text="${row.chargeId}"></a>
+                </td>
+                <td th:text="${row.name}"></td>
+                <td th:text="${row.charge}"></td>
+                <td th:text="${row.startDate}"></td>
+                <td th:text="${row.endDate}"></td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(result)}">
+                <td colspan="7">
+                    <div class="text-center lh-lg">該当する情報が見つかりませんでした。</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</html>

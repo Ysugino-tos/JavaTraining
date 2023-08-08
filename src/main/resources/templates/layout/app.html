@@ -36,6 +36,12 @@
                 加入者情報管理
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" th:classappend="|${usefunction == 'charge' ? 'active' : ''}|"
+                th:href="@{/charge/search}">
+                料金情報管理
+              </a>
+            </li>
           </ul>
         </div>
         <!--/* ナビバー - ログアウトボタン */-->
