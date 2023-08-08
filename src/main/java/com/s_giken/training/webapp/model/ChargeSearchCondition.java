@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor // 全てのメンバ変数に対する引数を持つコンストラクタを自動生成
 public class ChargeSearchCondition {
     // 料金名検索用
-    private String chargeName;
+    private String name;
 }
