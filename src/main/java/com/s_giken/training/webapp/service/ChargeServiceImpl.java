@@ -42,8 +42,8 @@ public class ChargeServiceImpl implements ChargeService {
      * @return 料金IDに一致した加入者情報
      */
     @Override
-    public Optional<Charge> findById(int memberId) {
-        return chargeRepository.findById(memberId);
+    public Optional<Charge> findById(int chargeId) {
+        return chargeRepository.findById(chargeId);
     }
 
     /**

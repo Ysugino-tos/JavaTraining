@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/app :: layout('料金情報編集', ~{::content}, 'charge')}">
+<div th:fragment="content">
+    <!--/*
+        料金情報編集画面
+    */-->
+    <div th:if="!${#strings.isEmpty(message)}" class="alert alert-success">
+        <span th:text="${message}"></span>
+    </div>
+    <form th:action="@{/charge/save}" th:object="${charge}" method="POST">
+        <input type="hidden" th:field="*{chargeId}">
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label" for="name">料金名</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" th:field="*{name}" maxlength="64">
+                <span class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label" for="charge">料金</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" th:field="*{charge}" maxlength="9">
+                <span class="text-danger" th:if="${#fields.hasErrors('charge')}" th:errors="*{charge}"></span>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label" for="startDate">適用開始日</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" th:field="*{startDate}">
+                <span class="text-danger" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></span>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label" for="endDate">適用終了日</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" th:field="*{endDate}">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">決定</button>
+                <a class="btn btn-link" th:href="@{/charge/search}">キャンセル</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+</html>

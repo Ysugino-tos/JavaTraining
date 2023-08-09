@@ -13,6 +13,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -37,7 +40,9 @@ public class Charge {
 
     @Column(name = "charge") // 対応する列名
     @NotNull // null不可
-    @NotBlank // 空文字不可
+    @Digits(integer = 9, fraction = 0) // 入力値の整数・小数の制限桁数
+    @Max(999999999)
+    @Min(0)
     private int charge;
 
     @Column(name = "start_date") // 対応する列名

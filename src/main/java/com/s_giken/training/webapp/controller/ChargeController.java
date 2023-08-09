@@ -88,22 +88,17 @@ public class ChargeController {
 	 * @param model Thymeleafに渡すデータ
 	 * @return 料金情報追加画面のテンプレート名
 	 */
-	/*
-	 * いったんコメントアウト
-	 * 
-	 * @GetMapping("/add")
-	 * public String addCharge(Model model) {
-	 * var member = new Charge();
-	 * model.addAttribute("charge", charge);
-	 * return "charge_edit";
-	 * }
-	 * いったんコメントアウトここまで
-	 */
+	@GetMapping("/add")
+	public String addCharge(Model model) {
+		var charge = new Charge();
+		model.addAttribute("charge", charge);
+		return "charge_edit";
+	}
 
 	/**
 	 * 料金情報を保存する
 	 * 
-	 * @param member             料金情報編集画面で入力された加入者情報
+	 * @param charge             料金情報編集画面で入力された料金情報
 	 * @param bindingResult      入力チェック結果
 	 * @param redirectAttributes リダイレクト先の画面に渡すデータ
 	 * @return リダイレクト先のURL
@@ -129,7 +124,7 @@ public class ChargeController {
 	 * @return リダイレクト先のURL
 	 */
 	@GetMapping("/delete/{id}")
-	public String deleteMember(
+	public String deleteCharge(
 			@PathVariable int id,
 			RedirectAttributes redirectAttributes) {
 		chargeService.deleteById(id);
