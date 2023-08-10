@@ -37,11 +37,11 @@ public class Charge {
     @NotBlank // 空文字不可
     private String name;
 
-    @Column(name = "charge") // 対応する列名
+    @Column(name = "amount") // 対応する列名
     @NotNull // null不可
     @Max(999999999)
     @Min(0)
-    private int charge;
+    private int amount;
 
     @Column(name = "start_date") // 対応する列名
     @DateTimeFormat(pattern = "yyyy-MM-dd") // 日付のフォーマットを指定

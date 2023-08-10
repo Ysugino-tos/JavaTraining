@@ -19,8 +19,8 @@
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label" for="charge">料金</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" th:field="*{charge}" maxlength="9">
-                <span class="text-danger" th:if="${#fields.hasErrors('charge')}" th:errors="*{charge}"></span>
+                <input type="text" class="form-control" th:field="*{amount}" maxlength="9">
+                <span class="text-danger" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></span>
             </div>
         </div>
         <div class="mb-3 row">
