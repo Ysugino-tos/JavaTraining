@@ -1,0 +1,5 @@
+ORM
+spring data jpa互換
+Hibernate
+
+

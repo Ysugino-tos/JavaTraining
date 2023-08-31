@@ -1,0 +1,22 @@
+料金情報管理　必要なソース
+
+・app.html
+　(完)→サービスメニューの追加
+・charge_search_condition.html
+　(完)→料金検索画面の追加
+・charge_search_result.html
+　(完)→料金検索結果画面の追加
+
+
+・ChargeController.java
+　(完)→コントローラーの追加(料金画面の各機能の追加)
+・Charge.java
+　(完)→料金管理形態のハコ
+・ChargeSearchCondition.java
+　(完)→検索時の変数のハコ
+・ChargeRepository.java
+　(完)→DB検索
+・ChargeService.java
+　(完)→各機能のインターフェース
+・ChargeServiceImp.java
+　(完)→ChargeService.javaを実装したクラス
